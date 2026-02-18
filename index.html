@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Distilling 3D disctinctive local descriptors for 6D pose estimation</title>
+  <title> Flose: Generative 6D Pose Estimation via Conditinal Flow Matching </title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -57,14 +57,18 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">⚗️ Distilling 3D distinctive local descriptors for 6D pose estimation</h1>
+          <h1 class="title is-1 publication-title"> Flose: Generative 6D Pose Estimation via Conditional Flow Matching </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=GYZWQrAAAAAJ&hl=en&authuser=1">Amir Hamza</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=ARB9u4cAAAAJ&hl=en&authuser=1">Andrea Caraffa</a><sup>1</sup>,</span>
-            <span class="author-block">
               <a href="https://davideboscaini.github.io/">Davide Boscaini</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://colin-de.github.io/">Weihang Li</a><sup>3,4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.professoren.tum.de/en/busam-benjamin/">Benjamin Busam</a><sup>3,4</sup>,
             </span>
             <span class="author-block">
               <a href="https://fabiopoiesi.github.io/">Fabio Poiesi</a><sup>1</sup>,
@@ -73,42 +77,51 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>TeV - Fondazione Bruno Kessler,</span>
-            <span class="author-block"><sup>2</sup>University of Trento</span>
+            <span class="author-block"><sup>2</sup>University of Trento,</span>
+            <span class="author-block"><sup>3</sup>Technical University of Munich,</span>
+            <span class="author-block"><sup>4</sup>Munich Center for Machine Learning</span>
           </div>
 
+          <!-- <div class="is-size-6 Email-authors">
+            <span class="author-block"><sup></sup>{ahamza, dboscaini, poiesi}@fbk.eu, </span> 
+            <span class="author-block"><sup></sup>{weihang.li, b.busam}@tum.de </span>
+          </div> -->
+
           <div class="is-size-6 Email-authors">
-            <span class="author-block"><sup></sup>{ahamza, dboscaini, acaraffa, poiesi}@fbk.eu </span>
+          <span class="author-block">{ahamza, dboscaini, poiesi}@fbk.eu</span><br>
+          <span class="author-block">{weihang.li, b.busam}@tum.de</span>
           </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv(coming soon)</span>
                 </a>
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/dYhhG27ohpg?feature=shared"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video</span>
+                  <span>Video(coming soon)</span>
                 </a>
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ahamza848/dGeDi/"
+                <a href="https://github.com/ahamza848/Flose/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code(coming soon)</span>
                   </a>
               </span>
             </div>
@@ -123,7 +136,7 @@
 
 
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop has-text-centered">
     <div class="hero-body">
       <img src="./static/IROS25_dGeDi-teaser.png"
@@ -136,10 +149,10 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small" style="background-color: transparent;">
+<!-- <section class="hero is-light is-small" style="background-color: transparent;">
   <div class="hero-body" style="background-color: transparent;">
     <div class="container has-text-centered">
       <video id="dgedi"
@@ -154,7 +167,7 @@
       </video>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -165,18 +178,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Three-dimensional local descriptors are crucial for encoding geometric surface properties, making them essential for various point cloud understanding tasks.
-            Among these descriptors, GeDi has demonstrated strong zero-shot 6D pose estimation capabilities but remains computationally impractical for real-world applications due to its expensive inference process.
+            Existing methods for instance-level 6D pose estimation typically rely on neural networks that either directly regress the pose in <span style="white-space: nowrap;">SE(3)</span> or estimate it indirectly via local feature matching.
+            The former struggle with object symmetries, while the latter fail in the absence of distinctive local features.
           </p>
           <p>
-            <i>Can we retain GeDi's effectiveness while significantly improving its efficiency?</i> 
-            In this work, we explore this question by introducing a knowledge distillation framework that trains an efficient student model to regress local descriptors from a GeDi teacher.
-            Our key contributions include:
-            an efficient large-scale training procedure that ensures robustness to occlusions and partial observations while operating under compute and storage constraints, 
-            and a novel loss formulation that handles weak supervision from non-distinctive teacher descriptors.
+            To overcome these limitations, we propose a novel formulation of 6D pose estimation as a conditional flow matching problem in <span style="white-space: nowrap;">ℝ³</span>.
+            We introduce <i>Flose</i>, a generative method that infers object poses through a denoising process conditioned on local features.
+            Unlike prior conditional flow matching approaches that rely solely on geometric guidance, <i>Flose</i> integrates appearance-based semantic features to mitigate ambiguities caused by object symmetries.
           </p>
           <p>
-            We validate our approach on five BOP Benchmark datasets and demonstrate a significant reduction in inference time while maintaining competitive performance with existing methods, bringing zero-shot 6D pose estimation closer to real-time feasibility.
+            We further incorporate RANSAC-based registration to handle outliers.
+            We validate <i>Flose</i> on five datasets from the established BOP benchmark, where it outperforms prior methods with an average improvement of <b>+4.5 Average Recall</b>.
           </p>
         </div>
       </div>
@@ -185,14 +197,15 @@
 </section>
 
 
-<section class="section">
+
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-justified">
       <div class="column">
         <div class="content">
           <h2 class="title is-3 has-text-centered">Method</h2>
           <figure>
-            <img src="./static/images/1.png" alt="Method Overview" style="max-width: 90%; height: 80;">
+            <img src=".static/images/diagram_crop_final.png" alt="Method Overview" style="max-width: 90%; height: 80;">
           </figure>
           <p>
             We introduce a novel distillation procedure to transfer the distinctive properties of a slow teacher encoder to a faster student encoder.
@@ -213,12 +226,86 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
 
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-justified">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered">Method</h2>
+
+          <figure class="has-text-centered">
+            <img src="./static/images/diagram_crop_final.png" alt="Method Overview" style="max-width: 90%; height: auto;">
+          </figure>
+
+          <!-- Problem Formulation -->
+          <p>
+            <strong>Problem formulation.</strong>
+            Given the 3D model of a <em>query object</em> and an RGBD image $\mathbf{I}$ of a scene containing it,
+            our goal is to recover the 6D pose of the object with respect to the camera reference frame.
+            We define the <em>target object</em> as the partial observation of the query object visible in $\mathbf{I}$.
+          </p>
+
+          <p>
+            Let $\mathcal{Q} \in \mathbb{R}^{N \times 3}$ denote the point cloud of the query object, and let
+            $\mathcal{T} \in \mathbb{R}^{N \times 3}$ be the point cloud obtained by lifting the pixels corresponding
+            to the target object into 3D space using the camera intrinsic parameters.
+            For notational simplicity, we assume that both point clouds contain the same number of points $N$.
+          </p>
+
+          <p>
+            Our objective is to estimate the rigid transformation
+            $(\hat{\mathbf{R}} \in \mathrm{SO}(3), \hat{\mathbf{t}} \in \mathbb{R}^3)$
+            that aligns $\mathcal{Q}$ with $\mathcal{T}$, such that
+          </p>
+
+          <p class="has-text-centered">
+            $\mathcal{Q}^r = \hat{\mathbf{R}}\,\mathcal{Q} + \hat{\mathbf{t}} \approx \mathcal{T}$.
+          </p>
+
+          <p>
+            For the alignment process, we additionally define $\mathcal{T}^r$ as the target point cloud transformed
+            into the query object's canonical frame using the ground-truth pose.
+          </p>
+
+          <!-- Overview -->
+          <p>
+            <strong>Overview.</strong>
+            As illustrated in Figure above, we design a three-stage pipeline.
+            First, we extract point-wise features $\mathbf{F}^{\mathcal{Q}}$ and $\mathbf{F}^{\mathcal{T}}$
+            from $\mathcal{Q}$ and $\mathcal{T}$, respectively, by fusing overlap-aware geometric features
+            and appearance-aware semantic features.
+            These features are produced by separate encoders $\Phi_\Theta$ and $\Gamma$.
+          </p>
+
+          <p>
+            Next, we deform the target point cloud $\mathcal{T}$ into
+            $\hat{\mathcal{T}} \approx \mathcal{T}^r$ using a conditional flow matching model
+            $\Psi_\Omega$, which performs a denoising process conditioned on the extracted features.
+          </p>
+
+          <p>
+            Finally, we estimate the rigid transformation $(\mathbf{R}, \mathbf{t})$
+            that best aligns $\mathcal{T}$ with $\hat{\mathcal{T}}$
+            by solving a Procrustes alignment problem.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -227,20 +314,20 @@
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
+    / Paper video. -->
+  <!-- </div> -->
+<!-- </section> --> 
 
 
 <section class="section" id="Citation">
   <div class="container is-max-desktop content">
     <h2 class="title">Citation</h2>
     <source> If you find this work useful, please cite:
-    <pre><code>@article{dist20253dlocal,
-  author    = {Hamza, Amir..},
-  title     = {Distilling 3D disctinctive local descriptors for 6D pose estimation},
+    <pre><code>@article{flose2026amir,
+  author    = {Hamza, Amir et al.},
+  title     = {Generative 6D Pose Estimation via Conditinal Flow Matching},
   journal   = {arXiv},
-  year      = {2025},
+  year      = {2026},
 }</code></pre>
   </div>
 </section>

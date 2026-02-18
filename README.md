@@ -1,13 +1,13 @@
-# Distilling 3D distinctive local descriptors for 6D pose estimation
-This is the repository that contains source code for the dGeDi website. The website template is from [Nerfies](https://nerfies.github.io).
+# Flose: Generative 6D Pose Estimation via Conditinal Flow Matching
+This is the repository that contains source code for the Flose website. The website template is from [Nerfies](https://nerfies.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find Flose useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{flose2026amir
+  author    = {Hamza, Amir et al.},
+  title     = {Generative 6D Pose Estimation via Conditinal Flow Matching},
+  journal   = {arXiv},
+  year      = {2026},
 }
 ```
 
