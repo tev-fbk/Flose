@@ -93,6 +93,13 @@
           </div>
 
 
+          <!-- <div class="has-text-centered" style="font-size: 1.1rem; font-weight: bold; color: #ce3c37;">
+            <p>Rank 1st on BOP Leaderboard - Model-based 6D Localization of Seen Objects </p>
+          </div> -->
+          <div class="has-text-centered" style="font-size: 1.1rem; font-weight: bold; color: #ce3c37;">
+            <p>🏆 Rank 1st on BOP Leaderboard - Model-based 6D Localization of Seen Objects</p>
+          </div>
+
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -254,7 +261,148 @@
 
 
 
+<section class="section">
+  <div class="container is-max-desktop">
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Quantitative Results</h2>
+
+        <!-- Caption -->
+        <div class="content has-text-justified"
+             style="margin-bottom: 1rem; font-size: 0.95rem; color: #555;">
+          <p>
+            Comparison with RGBD methods in terms of AR. The top block (rows 1–5) trains a separate model for each object,
+            while the bottom block (rows 6–11) trains a Single Model (S.M.) per dataset.
+            Row 12 quantifies the absolute improvement of Flose over the strongest S.M. competitor.
+          </p>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+          <table class="table is-striped is-hoverable is-fullwidth is-size-7">
+
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Method</th>
+                <th>S.M.</th>
+                <th>LM-O</th>
+                <th>T-LESS</th>
+                <th>TUD-L</th>
+                <th>IC-BIN</th>
+                <th>YCB-V</th>
+                <th>Avg</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1</td>
+                <td>Pix2Pose</td>
+                <td></td>
+                <td>58.8</td><td>51.2</td><td>82.0</td><td>39.0</td><td>78.8</td><td>62.0</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>ZebraPose</td>
+                <td></td>
+                <td>75.2</td><td>72.7</td><td>94.8</td><td>65.2</td><td>86.6</td><td>78.9</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>GDRNPP (BOP22)</td>
+                <td></td>
+                <td>77.5</td><td>87.4</td><td>96.6</td><td>72.2</td><td>92.1</td><td>85.2</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>HccePose(BF)</td>
+                <td></td>
+                <td>80.5</td><td>87.9</td><td>94.4</td><td>72.4</td><td>91.1</td><td>85.3</td>
+              </tr>
+
+
+              <tr>
+                <td>5</td>
+                <td>GDRNPP (BOP23)</td>
+                <td></td>
+                <td>79.4</td><td>91.4</td><td>96.4</td><td>73.7</td><td>92.8</td><td>86.7</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>Koenig-Hybrid</td>
+                <td>✔</td>
+                <td>63.1</td><td>65.5</td><td>92.0</td><td>43.0</td><td>70.1</td><td>66.7</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>CosyPose</td>
+                <td>✔</td>
+                <td>71.4</td><td>70.1</td><td>93.9</td><td>64.7</td><td>86.1</td><td>77.2</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>SurfEmb</td>
+                <td>✔</td>
+                <td>75.8</td><td>83.3</td><td>93.3</td><td>65.6</td><td>82.4</td><td>80.1</td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td>CIR</td>
+                <td>✔</td>
+                <td>73.4</td><td>77.6</td><td>96.8</td><td>67.6</td><td>89.3</td><td>81.0</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td>PFA</td>
+                <td>✔</td>
+                <td>79.7</td><td>85.0</td><td>96.0</td><td>67.6</td><td>88.8</td><td>83.4</td>
+              </tr>
+
+              <tr style="background-color: #e6f7ff; font-weight: bold;">
+                <td>11</td>
+                <td>Ours</td>
+                <td>✔</td>
+                <td><b>86.1</b></td>
+                <td><b>86.9</b></td>
+                <td><b>98.8</b></td>
+                <td><b>74.8</b></td>
+                <td><b>92.8</b></td>
+                <td><b>87.9</b></td>
+              </tr>
+
+              <tr style="background-color: #f5f5f5;">
+                <td>12</td>
+                <td>Improvement</td>
+                <td></td>
+                <td style="color: green;">+6.4</td>
+                <td style="color: green;">+1.9</td>
+                <td style="color: green;">+2.8</td>
+                <td style="color: green;">+7.2</td>
+                <td style="color: green;">+4.0</td>
+                <td style="color: green;">+4.5</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
