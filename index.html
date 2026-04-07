@@ -195,14 +195,67 @@
           </p>
           </p>
           <!-- New styled note -->
-          <p class="has-text-centered" style="font-weight: bold; margin-top: 2rem; font-size: 1.1em;">
-            More details coming soon.
+          <!-- <p class="has-text-centered" style="font-weight: bold; margin-top: 2rem; font-size: 1.1em;">
+            More details coming soon. -->
 
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        
+        <h2 class="title is-3">Method</h2>
+
+        <div class="content has-text-justified">
+
+          <!-- Figure -->
+          <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+            <img src="./static/images/diagram_crop_final.png"
+                 alt="Flose Method Overview"
+                 style="max-width: 100%; height: auto; border-radius: 8px;">
+            
+            <!-- Caption -->
+            <p style="margin-top: 0.8rem; font-size: 0.95em; color: #555; text-align: justify;">
+              <b>Overview of Flose.</b>
+              Given the query object point cloud $\mathcal{Q}$ and an RGBD image $\mathbf{I}$ as input (left), 
+              Flose estimates the 6D pose $(\hat{\mathbf{R}}, \hat{\mathbf{t}})$ (bottom right) through three stages:
+              <b>feature encoding</b> (red), <b>generative denoising</b> (blue), and <b>pose estimation</b> (green).
+              <br><br>
+
+              <i>Feature encoding:</i> An overlap-aware encoder $\Phi_\Theta$ and an appearance-aware encoder $\Gamma$ 
+              produce per-point descriptors, which are fused into $\mathbf{F}^\mathcal{Q}, \mathbf{F}^\mathcal{T}$. 
+              Colors encode feature similarity: corresponding regions share similar colors, while semantically distinct parts differ.
+              <br><br>
+
+              <i>Generative denoising:</i> A generative network $\Psi_\Omega$, conditioned on 
+              $\mathbf{F}^\mathcal{Q}, \mathbf{F}^\mathcal{T}$, learns a displacement field that iteratively denoises 
+              a Gaussian-noised point cloud $\mathbf{X}(1)$ into an aligned configuration $\mathbf{X}(0)$.
+              <br><br>
+
+              <i>Pose estimation:</i> The final 6D pose $(\hat{\mathbf{R}}, \hat{\mathbf{t}})$ is recovered using a 
+              RANSAC-based Kabsch solver followed by ICP refinement.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 
 
 <section class="section">
