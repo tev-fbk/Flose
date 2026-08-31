@@ -3,10 +3,10 @@ This is the repository that contains source code for the Flose website. The webs
 
 If you find Flose useful for your work please cite:
 ```
-@article{flose2026amir
-  author    = {Hamza, Amir et al.},
+@inproceedings{hamza2026flose
+  author    = {Hamza, Amir and Boscaini, Davide and Li, Weihang and Busam, Benjamin and Poiesi, Fabio},
   title     = {Generative 6D Pose Estimation via Conditinal Flow Matching},
-  journal   = {arXiv},
+  booktitle = {ICIP},
   year      = {2026},
 }
 ```
